@@ -1,4 +1,5 @@
 const readlineSync = require('readline-sync')
+const chalk = require('chalk')
 
 const question1 = 'Question 1: Le C++ est un: '
 const answer1 = ['language', 'compilateur']
@@ -15,13 +16,13 @@ function passQuestion(question, answer) {
   const index = readlineSync.keyInSelect(answer, question)
   switch (index) {
     case 0:
-      console.log('Bonne réponse')
+      console.log(chalk.green('Bonne réponse'))
       break
     case 1:
-      console.log('Mauvaise réponse')
+      console.log(chalk.red('Mauvaise réponse'))
       break
     default:
-      console.log('Réponse invalide')
+      console.log(chalk.purple('Réponse invalide'))
   }
 }
 passQuestion(question1, answer1)
@@ -29,6 +30,3 @@ passQuestion(question2, answer2)
 passQuestion(question3, answer3)
 passQuestion(question4, answer4)
 passQuestion(question5, answer5)
-
-
-

@@ -13,4 +13,14 @@ function pyramid(nb, str, rev) {
     }
   }
 }
+
+if (process.argv.length < 4) {
+  console.log('Veuillez spécifier les 2 paramètres : size et string')
+  process.exit(0)
+}
+
+if (isNaN(process.argv[2])) {
+  console.log('Veuillez spécifier seulement un nombre en 1er paramètre')
+  process.exit(0)
+}
 pyramid(size, symb, reverse)
